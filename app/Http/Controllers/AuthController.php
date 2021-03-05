@@ -54,7 +54,7 @@ class AuthController extends Controller
      
            // $check = $this->create($data);
            
-            return Redirect::to("dashboard")->withSuccess('Great! You have Successfully loggedin here is your password: Group.on!@#');
+            return Redirect::to("/")->with('message','Great! You have Successfully loggedin here is your password: Group.on!@#');
     }
 
     public function dashboard()
@@ -63,7 +63,7 @@ class AuthController extends Controller
       if(Auth::check()){
         return view('dashboard');
       }
-       return Redirect::to("login")->withSuccess('Opps! You do not have access');
+       return Redirect::to("login")->with('message','Opps! You do not have access');
     }
 
     public function create(array $data)
